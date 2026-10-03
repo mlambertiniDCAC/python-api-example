@@ -1,0 +1,29 @@
+[project]
+name = "menu-api"
+version = "0.1.0"
+description = "API de menús diarios y pedidos con FastAPI + MySQL"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115",
+    "sqlalchemy>=2.0",
+    "pymysql>=1.1",
+    "cryptography>=43",
+    "alembic>=1.13",
+    "pydantic-settings>=2.5",
+    "pyjwt>=2.9",
+    "pwdlib[argon2]>=0.2",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.6"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.isort]
+known-third-party = ["alembic"]
